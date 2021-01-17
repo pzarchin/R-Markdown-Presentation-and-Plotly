@@ -1,0 +1,30 @@
+---
+title: "R-Markdown Presentation and Plotly"
+author: "P.Z"
+date: "1/17/2021"
+output: 
+        ioslides_presentation:
+                smaller: true
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This presentation aims to show case use of the R Package Plotly in an R Presentation document.
+
+## Loading needed packages
+```{r}
+library(plotly)
+```
+## Loading data
+```{r}
+data(iris)
+```
+
+##Creating a graph
+```{r message=FALSE, warning=FALSE}
+plot_ly(x= iris$Petal.Width, y= iris$Petal.Length, z= iris$Species, type= "scatter3d", mode= "markers", color= iris$Spicies)
+```
